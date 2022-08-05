@@ -1,0 +1,9 @@
+.section{
+    background-image:url('https://www.apple.com/newsroom/images/product/watch/standard/Apple_delivers-apple-watch-series-6_09152020.jpg.landing-big_2x.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 2rem; 
+}
+.background_color{
+    background-color: rgba(0, 0, 0, 0.763);
+}

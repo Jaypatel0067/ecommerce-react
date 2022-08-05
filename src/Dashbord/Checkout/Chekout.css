@@ -1,0 +1,18 @@
+.container{
+    margin-top: 10% ;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+   
+}
+.row{width: 50%;}
+.StripeCheckout{width: 100%;}
+.StripeCheckout > span{
+    width: 100%!important;    
+    background-color: rgb(79 70 229 / var(--tw-bg-opacity))!important;
+    background-image: none!important;
+    border: transparent!important;
+    padding: 1.5rem!important;
+    line-height: 0px!important;
+}

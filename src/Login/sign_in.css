@@ -1,0 +1,7 @@
+.bgcolor{
+    background-color: black;color: white;height: 100vh;    background-image: url(https://www.apple.com/newsroom/images/product/watch/standard/Apple_delivers-apple-watch-series-6_09152020.jpg.landing-big_2x.jpg);
+  
+}
+.Card{  background: #000000c9;
+    padding: 4rem;border-radius: 3%;
+    border: 1px solid white;}
