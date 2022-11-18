@@ -11,20 +11,21 @@ import {
 import Sign_Up from "./Registration/Sign_up";
 import Store from "./Dashbord/Store/Store";
 import Checkout from "./Dashbord/Checkout/chekout";
-import {
-  auth,
-  createUserProfileDocument,
-} from "./firebase/firebase.util";
+import { auth, createUserProfileDocument } from "./firebase/firebase.util";
 import Dashbord from "./Dashbord";
+import Sign_in from "./Login/Sign_in";
 function App() {
   const [selectmode, setmode] = useState(false);
-  //firebase signin usestate.
-  const [Sign_user, set_Sign_user] = useState(null);
+
+  const [Sign_user, set_Sign_user] = useState({userAuth: null});
 
   const [users, setUsers] = useState([]);
 
   const [product_details, select_product] = useState([]);
+
   const [addcart, setcart] = useState([]);
+ 
+
 
   const fetchData = () => {
     fetch("https://fakestoreapi.com/products?limit=10")
@@ -46,6 +47,7 @@ function App() {
           () => {}
         );
       }
+     
       set_Sign_user({ userAuth });
 
       return () => {
@@ -76,14 +78,14 @@ function App() {
           }
         />
         <Route
-          exact
+          
           path="/Sign_in"
           element={
-            !Sign_user ? <Navigate to="/" /> : <Login Sign_user={Sign_user} />
+           !Sign_user.userAuth?<Login Sign_user={Sign_user} addcart={addcart} setmode={setmode}  />:<Navigate to="/" />
           }
         />
 
-        <Route exact path="/Sign_Up" element={<Sign_Up />} />
+        <Route exact path="/Sign_Up" element={<Sign_Up Sign_user={Sign_user} addcart={addcart} setmode={setmode}  />} />
         <Route
           exact
           path="/Store"
